@@ -18,7 +18,7 @@ int main(void)
     const int b = 4;
 
     double exactVelocidad = std::sqrt(2*exactaIntegral(a,b)/Masa);
-    //std::cout << exactaIntegral(a, b) << "\n";                                 Comprobando valores especificos 
+    //std::cout << exactaIntegral(a, b) << "\n";                                 //Comprobando valores especificos 
     //std::cout << exactVelocidad << "\n";
     //std::cout << std::sqrt(2*trapezoid(a, b, N2, function)/Masa) << "\n";
     //std::cout << std::sqrt(2*simpson(a, b, N2, function)/Masa) << "\n";
