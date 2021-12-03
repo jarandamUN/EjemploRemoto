@@ -10,7 +10,8 @@
 void multiply(const std::vector<double> & m1, const std::vector<double> & m2, std::vector<double> & m3);
 
 int main(int argc, char **argv) {
-
+  
+  double t4 = 1.109e-06;
   std::ofstream fout("histo.txt");
   for (int ibin = 4; ibin <= 512; ibin*= 2) {
     std::cout << "Ibin: " << ibin << std::endl;
@@ -31,7 +32,7 @@ int main(int argc, char **argv) {
 
     std::cout << elapsed.count() << "\n";
 
-    fout << ibin << "\t" << elapsed.count() << "\n";
+    fout << ibin << "\t" << elapsed.count()/ t4 << "\n";
   }
   fout.close();
   
