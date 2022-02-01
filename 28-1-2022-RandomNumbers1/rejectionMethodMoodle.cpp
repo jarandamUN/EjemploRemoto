@@ -23,7 +23,7 @@ int main(int argc, char **argv)
     std::uniform_real_distribution<double> valY(0, 3.0/4.0);      //Rango de la pdf, de 0 al máximo de pdf
 
     std::ofstream fout("datos.txt");                              //Impresión de los datos aleatorios generados
-    for (int ii = 0; ii < SAMPLES; ++ii) {
+    for (int ii = 0; ii < SAMPLES;) {
         double xs = valX(gen);
         double ys = valY(gen);
         if(ys < pdf(xs)){                                         //Rejection Method
@@ -31,6 +31,7 @@ int main(int argc, char **argv)
             int bin = int((xs - XMIN)/DX);
             if (0 <= bin && bin < NBINS) {
                 histo[bin]++;
+                ++ii;
             }
         }
     }
